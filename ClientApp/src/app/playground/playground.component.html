@@ -1,1 +1,8 @@
-<p>playground works!</p>
+<p>Calendar</p>
+<div class="container-fluid">
+    <wj-calendar #theCalendar>
+    </wj-calendar>
+    <div>
+        現在の日付: <b>{{ theCalendar.value | date:'fullDate'}}</b>
+    </div>
+</div>
