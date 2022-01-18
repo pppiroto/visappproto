@@ -12,14 +12,6 @@ git clone https://github.com/pppiroto/visappproto.git
 https://dotnet.microsoft.com/en-us/download/dotnet/3.1
 - 上記から入手しインストール
 
-## Project作成
-
-- カレンとディレクトリに、.Net Core + Angular生成
-```
-$ dotnet new angular -o .
-$ dotnet new gitignore
-```
-
 ## NPM
 ### Mac
 - Homebrew インストール 
@@ -64,12 +56,6 @@ $ ng build
 $ ng serve
 ```
 
-## Bootstrap
-```
-$ cd ClientApp
-$ npm install bootstrap
-```
-
 ### E2Eテスト
 - ng e2e
 [Protractor](http://www.protractortest.org/)を使用したエンドツーエンドテスト
@@ -80,7 +66,7 @@ https://docs.microsoft.com/ja-jp/dotnet/core/tools/dotnet-new-sdk-templates#spa
 
 - カレントディレクトリにプロジェクトを生成
 ```
-$ dotnet new angular -o . -f netcoreapp3.1
+$ dotnet new angular -o . 
 ```
 ## 実行(Hello world と サンプル)
 ```
@@ -119,6 +105,7 @@ $ cd ClientApp/src/app
 ## component 追加
 - main-frame コンポーネントを追加
 ```
+$ cd ClientApp
 $ ng g component main-frame --module=app.module
 CREATE src/app/main-frame/main-frame.component.css (0 bytes)
 CREATE src/app/main-frame/main-frame.component.html (25 bytes)
