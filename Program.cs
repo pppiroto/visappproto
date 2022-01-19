@@ -1,6 +1,18 @@
+using System.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using visappproto.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+// ADD From 設定をロードし、DIコンテナに格納
+builder.Services.Configure<VisAppProtSettings>(
+    builder.Configuration.GetSection(nameof(VisAppProtSettings)));
+builder.Services.AddSingleton<IVisAppProtSettings>(sp 
+    => sp.GetRequiredService<IOptions<VisAppProtSettings>>().Value);
+// ADD To
 
 builder.Services.AddControllersWithViews();
 

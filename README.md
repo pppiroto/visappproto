@@ -16,6 +16,8 @@ $ npm install
 https://dotnet.microsoft.com/en-us/download/dotnet/3.1
 - 上記から入手しインストール
 
+- https://qiita.com/uikou/items/40085758a596f87ecbf7
+
 ## NPM
 ### Mac
 - Homebrew インストール 
@@ -166,4 +168,20 @@ $ npm install @grapecity/wijmo.angular2.all
 
 ## Demo
 - https://demo.grapecity.com/wijmo/demos/Input/Calendar/Overview/angular
+
+
+# Data Access
+## Oracle 19c
++ SQL Developer 接続
+
+<img src="./readme_images/07_oracle_conn.png" width="400">
+
+## DataAccess Package
++ https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core
+```
+$ dotnet add package Oracle.ManagedDataAccess.Core --version 3.21.50
+```
+
+## OR Mapper(Dapper)
++ https://qiita.com/ikuosaito1989/items/f332863dfbe5f30fdf4a
 

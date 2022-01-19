@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using visappproto.Models;
 
 namespace visappproto.Controllers;
 
@@ -13,9 +14,10 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IVisAppProtSettings settings)
     {
         _logger = logger;
+        _logger.LogInformation($"DIによる設定取得確認:{settings.ConnectionStrings}");
     }
 
     [HttpGet]
