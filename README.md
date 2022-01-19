@@ -7,6 +7,10 @@ web application prototype
 ## git clone
 git clone https://github.com/pppiroto/visappproto.git
 - 本プロジェクト
+```
+$ cd ClientApp
+$ npm install
+```
 
 ## .NET Core 6.0
 https://dotnet.microsoft.com/en-us/download/dotnet/3.1
@@ -44,9 +48,7 @@ npm run ng --version
 ```
 - Angular CLI をグローバルにインストール
 ```
-$ npm run ng --version
-8.3.1
-$ npm install -g @angular/cli@8.3.1
+$ npm install -g @angular/cli@12.2.2
 ```
 
 ### Build / Run
