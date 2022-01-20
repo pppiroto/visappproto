@@ -1,4 +1,4 @@
-namespace visappproto;
+namespace visappproto.Models;
 
 public class WeatherForecast
 {

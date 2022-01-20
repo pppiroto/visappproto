@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Employee</h1>
+
+<ul>
+  <li>Oracleのデータプロバイダを直接使用するコントローラーからデータを取得する</li>
+</ul>
+
+<p *ngIf="!employees"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="employees">
+  <thead>
+    <tr>
+      <th>EMPLOYEE_ID    </th> 
+      <th>FIRST_NAME     </th> 
+      <th>LAST_NAME      </th> 
+      <th>EMAIL          </th> 
+      <th>PHONE_NUMBER   </th> 
+      <th>HIRE_DATE      </th> 
+      <th>JOB_ID         </th> 
+      <th>SALARY         </th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.employeeId }}</td>
+      <td>{{ employee.firstName }}</td>
+      <td>{{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.phoneNumber }}</td>
+      <td>{{ employee.hireDate }}</td>
+      <td>{{ employee.jobId }}</td>
+      <td>{{ employee.salaryd }}</td>
+    </tr>
+  </tbody>
+</table>

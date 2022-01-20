@@ -12,6 +12,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MainFrameComponent } from './main-frame/main-frame.component';
 import { PlaygroundComponent } from './playground/playground.component';
+import { SimpleDataAccessComponent } from './simple-data-access/simple-data-access.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PlaygroundComponent } from './playground/playground.component';
     CounterComponent,
     FetchDataComponent,
     MainFrameComponent,
-    PlaygroundComponent
+    PlaygroundComponent,
+    SimpleDataAccessComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -34,6 +36,7 @@ import { PlaygroundComponent } from './playground/playground.component';
       { path: 'playground', component: PlaygroundComponent },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'simple-data', component: SimpleDataAccessComponent },
     ])
   ],
   providers: [],
