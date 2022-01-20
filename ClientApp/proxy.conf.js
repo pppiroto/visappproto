@@ -8,6 +8,7 @@ const PROXY_CONFIG = [
     context: [
       "/weatherforecast",
       "/simpledataaccess",
+      "/ormdataaccess",
    ],
     target: target,
     secure: false

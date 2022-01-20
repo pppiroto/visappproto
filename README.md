@@ -182,7 +182,7 @@ $ npm install @grapecity/wijmo.angular2.all
 # Data Access
 ## Oracle 19c
 + SQL Developer 接続
-
++ Connection文字列は、/Models/VisAppProtSettings.cs に記述したものをDI
 <img src="./readme_images/07_oracle_conn.png" width="400">
 
 ## DataAccess Package
@@ -191,6 +191,16 @@ $ npm install @grapecity/wijmo.angular2.all
 $ dotnet add package Oracle.ManagedDataAccess.Core --version 3.21.50
 ```
 
+## Oracle Data Providor直接利用
+- /Controllers/SimpleDataAccessController.cs
+
 ## OR Mapper(Dapper)
 + https://qiita.com/ikuosaito1989/items/f332863dfbe5f30fdf4a
++ [QueryFirstチュートリアル](https://dapper-tutorial.net/queryfirst)
+```
+$ dotnet add package Dapper --version 2.0.123
+```
 
+### Sample
++ ClientApp/src/app/orm-data-access
++ Controllers/OrmDataAccessController.cs

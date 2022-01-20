@@ -2,16 +2,16 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-simple-data-access',
-  templateUrl: './simple-data-access.component.html',
-  styleUrls: ['./simple-data-access.component.css']
+  selector: 'app-orm-data-access',
+  templateUrl: './orm-data-access.component.html',
+  styleUrls: ['./orm-data-access.component.css']
 })
-export class SimpleDataAccessComponent implements OnInit {
+export class OrmDataAccessComponent implements OnInit {
 
   public employees: Employee[] = [];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Employee[]>(baseUrl + 'simpledataaccess').subscribe(result => {
+    http.get<Employee[]>(baseUrl + 'ormdataaccess').subscribe(result => {
       this.employees = result;
     }, error => console.error(error));
   }

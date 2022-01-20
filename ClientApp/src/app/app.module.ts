@@ -13,6 +13,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { MainFrameComponent } from './main-frame/main-frame.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { SimpleDataAccessComponent } from './simple-data-access/simple-data-access.component';
+import { OrmDataAccessComponent } from './orm-data-access/orm-data-access.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SimpleDataAccessComponent } from './simple-data-access/simple-data-acce
     FetchDataComponent,
     MainFrameComponent,
     PlaygroundComponent,
-    SimpleDataAccessComponent
+    SimpleDataAccessComponent,
+    OrmDataAccessComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,6 +39,7 @@ import { SimpleDataAccessComponent } from './simple-data-access/simple-data-acce
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'simple-data', component: SimpleDataAccessComponent },
+      { path: 'orm-data', component: OrmDataAccessComponent },
     ])
   ],
   providers: [],

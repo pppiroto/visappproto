@@ -19,21 +19,21 @@ public class SimpleDataAccessController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<dynamic> Get()
+    public IEnumerable<Employelee> Get()
     {
-        var employees = new List<dynamic>();
+        var employees = new List<Employelee>();
         using(var conn = new OracleConnection(_settings.ConnectionStrings)) 
         {
             conn.Open();
 
-            var sql = "select * from hr.employees";
+            var sql = "select * from hr.employees order by EMPLOYEE_ID";
             var cmd = new OracleCommand(sql, conn);
 
             using(OracleDataReader reader = cmd.ExecuteReader())
             {
                 while(reader.Read())
                 {
-                    var employee = new {
+                    var employee = new Employelee {
                         employeeId  =  reader.GetString("EMPLOYEE_ID"),
                         firstName   =  reader.GetString("FIRST_NAME"),
                         lastName    =  reader.GetString("LAST_NAME"),
@@ -41,7 +41,7 @@ public class SimpleDataAccessController : ControllerBase
                         phoneNumber =  reader.GetString("PHONE_NUMBER"),
                         hireDate    =  reader.GetDateTime("HIRE_DATE"),
                         jobId       =  reader.GetString("JOB_ID"),
-                        salaryd     =  reader.GetDecimal("SALARY"),                    
+                        salary      =  reader.GetDouble("SALARY"),                    
                     };
                     employees.Add(employee);
                 }
@@ -49,4 +49,34 @@ public class SimpleDataAccessController : ControllerBase
         }
         return employees;
     }
+
+    // dynamic を利用
+    // public IEnumerable<dynamic> Get()
+    // {
+    //     var employees = new List<dynamic>();
+    //     using(var conn = new OracleConnection(_settings.ConnectionStrings)) 
+    //     {
+    //         conn.Open();
+    //         var sql = "select * from hr.employees order by EMPLOYEE_ID";
+    //         var cmd = new OracleCommand(sql, conn);
+    //         using(OracleDataReader reader = cmd.ExecuteReader())
+    //         {
+    //             while(reader.Read())
+    //             {
+    //                 var employee = new {
+    //                     employeeId  =  reader.GetString("EMPLOYEE_ID"),
+    //                     firstName   =  reader.GetString("FIRST_NAME"),
+    //                     lastName    =  reader.GetString("LAST_NAME"),
+    //                     email       =  reader.GetString("EMAIL"),
+    //                     phoneNumber =  reader.GetString("PHONE_NUMBER"),
+    //                     hireDate    =  reader.GetDateTime("HIRE_DATE"),
+    //                     jobId       =  reader.GetString("JOB_ID"),
+    //                     salary      =  reader.GetDecimal("SALARY"),                    
+    //                 };
+    //                 employees.Add(employee);
+    //             }
+    //         }
+    //     }
+    //     return employees;
+    // }
 }
