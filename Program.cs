@@ -7,12 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// ADD From 設定をロードし、DIコンテナに格納
+#region TODO DIコンテナに格納 
+// 設定のロードとDI格納
 builder.Services.Configure<VisAppProtSettings>(
     builder.Configuration.GetSection(nameof(VisAppProtSettings)));
 builder.Services.AddSingleton<IVisAppProtSettings>(sp 
     => sp.GetRequiredService<IOptions<VisAppProtSettings>>().Value);
-// ADD To
+#endregion
+
 
 builder.Services.AddControllersWithViews();
 

@@ -170,6 +170,15 @@ $ npm install @grapecity/wijmo.angular2.all
 - https://demo.grapecity.com/wijmo/demos/Input/Calendar/Overview/angular
 
 
+# ASP.NET Core
+- https://docs.microsoft.com/ja-jp/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
+
+
+## コントローラー
+- クラス名は「Controler」で終わらなければならない
+- dotnet watch run で起動時、Web API用のポートが用意される(proxy.conf.js)
+<img src="./readme_images/08_webapi_debug.png" width="400">
+
 # Data Access
 ## Oracle 19c
 + SQL Developer 接続
