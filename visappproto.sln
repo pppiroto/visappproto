@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "visappproto", "visappproto\visappproto.csproj", "{29315B90-565A-4992-AB2F-53E716EDE191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "visappproto_test", "visappproto_test\visappproto_test.csproj", "{363B0957-6DAC-4CEE-8E2C-94D209D4C412}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29315B90-565A-4992-AB2F-53E716EDE191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29315B90-565A-4992-AB2F-53E716EDE191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29315B90-565A-4992-AB2F-53E716EDE191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29315B90-565A-4992-AB2F-53E716EDE191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{363B0957-6DAC-4CEE-8E2C-94D209D4C412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{363B0957-6DAC-4CEE-8E2C-94D209D4C412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{363B0957-6DAC-4CEE-8E2C-94D209D4C412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{363B0957-6DAC-4CEE-8E2C-94D209D4C412}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
