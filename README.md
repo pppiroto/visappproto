@@ -167,17 +167,29 @@ $ npm install @grapecity/wijmo.angular2.all
 </video>
 
 ## Demo
-- https://demo.grapecity.com/wijmo/demos/Input/Calendar/Overview/angular
-
+- https://demo.grapecity.com/wijmo/demos/
 
 # ASP.NET Core
-- https://docs.microsoft.com/ja-jp/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio
+- [チュートリアル](https://docs.microsoft.com/ja-jp/aspnet/core/tutorials/first-web-api?view=aspnetcore-6.0&tabs=visual-studio)
 
+- [サンプルのダウンロード](https://docs.microsoft.com/ja-jp/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0#how-to-download-a-sample)
 
 ## コントローラー
+- https://docs.microsoft.com/ja-jp/aspnet/mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 - クラス名は「Controler」で終わらなければならない
 - dotnet watch run で起動時、Web API用のポートが用意される(proxy.conf.js)
 <img src="./readme_images/08_webapi_debug.png" width="400">
+
+### Action
+- Progmra.cs 参照
+
+### ユニットテスト
+- [コントローラーのユニットテスト](https://docs.microsoft.com/ja-jp/aspnet/core/mvc/controllers/testing?view=aspnetcore-6.0)
+- [NUnit](https://docs.microsoft.com/ja-jp/dotnet/core/tools/dotnet-new-sdk-templates#nunit)
+```
+$ dotnet new nunit -o Tests
+```
+
 
 # Data Access
 ## Oracle 19c

@@ -5,7 +5,6 @@ namespace visappproto.Models {
 
     public class VisAppProtSettings : IVisAppProtSettings
     {
-        private string? connectionStrings;
-        public string ConnectionStrings { get => connectionStrings ?? ""; set => connectionStrings = value; }
+        public string ConnectionStrings { get; set; } = null!;
     }
 }
