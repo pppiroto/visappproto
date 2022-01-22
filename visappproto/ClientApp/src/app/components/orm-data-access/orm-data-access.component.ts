@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Employee } from '../../models/employee';
 
 @Component({
   selector: 'app-orm-data-access',
@@ -18,15 +19,4 @@ export class OrmDataAccessComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-}
-interface Employee {
-  employeeId: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phoneNumber: string;
-  hireDate: string;
-  jobId: string;
-  salary: number;
 }

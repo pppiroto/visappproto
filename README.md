@@ -236,3 +236,8 @@ $ dotnet add package Dapper --version 2.0.123
 ### Sample
 + ClientApp/src/app/orm-data-access
 + Controllers/OrmDataAccessController.cs
+
+
+# UI
+## Grid
+- [FrexGrid](https://demo.grapecity.com/wijmo/api/modules/wijmo_grid.html)
