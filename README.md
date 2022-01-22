@@ -77,11 +77,12 @@ $ dotnet new angular -o visappproto
 $ dotnet new xunit -o visappproto_test
 ```
 
-- ソリューションの作成とプロジェクトの追加
+- ソリューションの作成とプロジェクトの追加、テストプロジェクトに参照の追加
 ```
 $ dotnet new sln -o .
 $ dotnet sln add visappproto
 $ dotnet sln add visappproto_test
+$ dotnet add ./visappproto_test/visappproto_test.csproj reference ./visappproto/visappproto.csproj 
 ```
 
 ## 実行(Hello world と サンプル)
@@ -197,11 +198,18 @@ $ npm install @grapecity/wijmo.angular2.all
 
 ### ユニットテスト
 - [コントローラーのユニットテスト](https://docs.microsoft.com/ja-jp/aspnet/core/mvc/controllers/testing?view=aspnetcore-6.0)
-- [NUnit](https://docs.microsoft.com/ja-jp/dotnet/core/tools/dotnet-new-sdk-templates#nunit)
-```
-$ dotnet new nunit -o Tests
-```
+- [xUnit](https://docs.microsoft.com/ja-jp/dotnet/core/testing/unit-testing-with-dotnet-test)
 
+- [Fact] 属性で、テスト ランナーによって実行されるテスト メソッドを宣言
+- テストプロジェクトフォルダから、以下を実行
+```
+$ cd visappproto_test
+$ dotnet test
+```
+#### Mock ライブラリの導入
+```
+$ dotnet add package Moq --version 4.16.1
+```
 
 # Data Access
 ## Oracle 19c
