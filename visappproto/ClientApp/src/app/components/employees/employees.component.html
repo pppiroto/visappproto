@@ -1,1 +1,17 @@
 <h3>Employees</h3>
+<div class="container-fluid">
+    <p [innerHTML]="selectedItem"></p>
+    <!-- the grid -->
+    <wj-flex-grid #flex
+        [itemsSource]="employees" 
+        (initialized)="flexInitialized(flex)">
+        <wj-flex-grid-column [header]="'EMPLOYEE_ID'" [binding]="'employeeId'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'FIRST_NAME'" [binding]="'firstName'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'LAST_NAME'" [binding]="'lastName'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'EMAIL'" [binding]="'email'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'PHONE_NUMBER'" [binding]="'phoneNumber'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'HIRE_DATE'" [binding]="'hireDate'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'JOB_ID'" [binding]="'jobId'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'SALARY'" [binding]="'salary'" width="2*"></wj-flex-grid-column>
+    </wj-flex-grid>
+</div>
