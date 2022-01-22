@@ -123,11 +123,11 @@ $ cd ClientApp/src/app
 - main-frame コンポーネントを追加
 ```
 $ cd ClientApp
-$ ng g component main-frame --module=app.module
-CREATE src/app/main-frame/main-frame.component.css (0 bytes)
-CREATE src/app/main-frame/main-frame.component.html (25 bytes)
-CREATE src/app/main-frame/main-frame.component.spec.ts (650 bytes)
-CREATE src/app/main-frame/main-frame.component.ts (284 bytes)
+$ ng g component components/main-frame --module=app.module
+CREATE src/app/components/main-frame/main-frame.component.css (0 bytes)
+CREATE src/app/components/main-frame/main-frame.component.html (25 bytes)
+CREATE src/app/components/main-frame/main-frame.component.spec.ts (650 bytes)
+CREATE src/app/components/main-frame/main-frame.component.ts (284 bytes)
 UPDATE src/app/app.module.ts (1267 bytes)
 ```
 - app.module.ts に参照が追記される
@@ -241,3 +241,5 @@ $ dotnet add package Dapper --version 2.0.123
 # UI
 ## Grid
 - [FrexGrid](https://demo.grapecity.com/wijmo/api/modules/wijmo_grid.html)
+- visappproto/ClientApp/src/app/components/employees
+<img src="./readme_images/09_frexgrid_sample.png" width="400">
