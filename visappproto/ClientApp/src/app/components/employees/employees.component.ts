@@ -24,6 +24,10 @@ export class EmployeesComponent implements OnInit {
     employeeService.getEmployees().subscribe(result => {
       this.employees = result;
     }, error => console.error(error));
+
+    employeeService.firstNameAutoComplete("a").subscribe(result => {
+      console.log(result);
+    }, error => console.error(error));
   } 
 
   flexInitialized(flexgrid: wjcGrid.FlexGrid) {
@@ -46,15 +50,15 @@ export class EmployeesComponent implements OnInit {
    * @param callback 結果が取得されたときに呼び出すコールバック関数
    * @see https://demo.grapecity.com/wijmo/api/classes/wijmo_input.autocomplete.html#itemssourcefunction
    */
-  getItemBySearch(query: string, max: number, callback: Function) {
+  getItemBySearch(query: string, max: number, callback: Function): void {
+    console.log(`this.employeeService = ${this.employeeService}`);
     if (!query) {
         callback(null);
         return;
     }
-
-    // https://angular.jp/guide/http
-    //console.log(`query:${query}, max:${max}, http:${this.http}`);
-
+    this.employeeService.firstNameAutoComplete(query).subscribe(result => {
+      console.log(result);
+    }, error => console.error(error));
 
   }
    

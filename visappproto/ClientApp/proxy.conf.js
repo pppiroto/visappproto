@@ -10,6 +10,7 @@ const PROXY_CONFIG = [
       "/simpledataaccess",
       "/ormdataaccess",
       "/employees",
+      "/autocomplete",
    ],
     target: target,
     secure: false

@@ -21,8 +21,10 @@ public class AutoCompleteController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<MasterKeyValue> EmployeeFirstName(string keyword)
+    // public IEnumerable<MasterKeyValue> EmployeeFirstName(string keyword)
+    public IEnumerable<MasterKeyValue> Get()
     {
+        string keyword = "A";
         Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
         var employeeFirstNames = new List<MasterKeyValue>();
