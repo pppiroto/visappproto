@@ -52,7 +52,9 @@ import { EmployeesComponent } from './components/employees/employees.component';
       { path: 'employees', component: EmployeesComponent },
     ])
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

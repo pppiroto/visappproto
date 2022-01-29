@@ -2,9 +2,17 @@
 <div class="form-group">
     <div class="form-group">
         <label for="theAutoComplete">AutoComplete:</label>
-        <wj-auto-complete #theAutoComplete id="theAutoComplete" [placeholder]="'Employee first name'" [displayMemberPath]="'ProductName'"
-            [itemsSourceFunction]="getItemBySearch">
+        <wj-auto-complete 
+            #theAutoComplete id="theAutoComplete" 
+            [placeholder]="'Employee first name'" 
+            [displayMemberPath]="'ProductName'"
+            [itemsSourceFunction]="getItemBySearch"
+        >
         </wj-auto-complete>
+    </div>
+    <div>
+        <input type="button" value="searchSync" (click)="searchSync()" />
+        <input type="button" value="searchASync" (click)="searchASync()" />
     </div>
 </div>
 <div class="container-fluid">
