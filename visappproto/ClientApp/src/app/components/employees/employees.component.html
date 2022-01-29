@@ -7,7 +7,14 @@
             [(text)]="jobId"
         ></wj-combo-box>
     </div>
-
+    <div class="form-group">
+        <label for="autoFirstName">FIRST_NAME:</label>
+        <wj-auto-complete #theAutoComplete id="autoFirstName" 
+            [placeholder]="'FIRST_NAME'" 
+            [displayMemberPath]="'masterValue'"
+            [itemsSourceFunction]="getFirstNameBySearch">
+        </wj-auto-complete>
+    </div>
 
     <div>
         <input type="button" value="searchSync" (click)="searchSync()" />

@@ -26,6 +26,7 @@ export class EmployeesComponent implements OnInit {
   flex!: wjcGrid.FlexGrid;
 
   constructor(private employeeService: EmployeeService) { 
+    console.log('constructor');
     console.log(`${this.employeeService.getBaseUrl()}`);
   } 
 
@@ -55,6 +56,26 @@ export class EmployeesComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  getFirstNameBySearch(query: string, max: number, callback: Function) {
+    console.log(this); // this -> AutoCompleteコントロール
+    
+    if (!query) {
+        callback(null);
+        return;
+    }
+
+    // TODO Service で処理をしたい
+    // 本関数は、AutoComplete　のプロパティにセットされるため、
+    //　ComponentにDIされてたサービスの参照方法が現在不明
+    //　最悪この書き方だとしても、同様にDIされるbaseURL を解決する必要がある。。。
+    wjcCore.httpRequest(`https://localhost:44472/Autocomplete/EmployeeFirstname?id=${encodeURIComponent(query)}`, {
+        success: (xhr: XMLHttpRequest) => {
+            let response = JSON.parse(xhr.response);
+            callback(response);
+        }
+    });
   }
 
   async searchSync() {
