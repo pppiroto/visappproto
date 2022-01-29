@@ -18,20 +18,37 @@ public class AutoCompleteController : ControllerBase
     {
         _logger = logger;
         _settings = settings;
+        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
+    }
+
+    [HttpGet("EmployeeJobIdList")]
+    // public IEnumerable<MasterKeyValue> EmployeeFirstName(string keyword)
+    public IEnumerable<MasterKeyValue> EmployeeJobIdList()
+    {
+        var employeeJobIdList = new List<MasterKeyValue>();
+        using(var conn = new OracleConnection(_settings.ConnectionStrings)) 
+        {
+            conn.Open();
+            var sql = 
+            @$"select JOB_ID as MASTER_KEY, JOB_ID as MASTER_VALUE from hr.employees 
+                group by JOB_ID order by JOB_ID";
+
+            _logger.LogInformation(sql);
+
+            employeeJobIdList.AddRange(
+                conn.Query<MasterKeyValue>(sql));
+        }
+        return employeeJobIdList;
     }
 
     [HttpGet("EmployeeFirstname")]
     // public IEnumerable<MasterKeyValue> EmployeeFirstName(string keyword)
     public IEnumerable<MasterKeyValue> EmployeeFirstname(string id)
     {
-        Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
-
         var employeeFirstNames = new List<MasterKeyValue>();
-        System.Console.WriteLine(_settings.ConnectionStrings);
         using(var conn = new OracleConnection(_settings.ConnectionStrings)) 
         {
             conn.Open();
-
             var firstname = $"%{id.ToUpper()}%";
 
             var sql = 

@@ -24,8 +24,11 @@ export class EmployeeService {
   }
   
   firstNameAutoComplete(keyword: string) : Observable<MasterKeyValue[]> {
-    // return this.http.get<MasterKeyValue[]>(this.baseUrl + 'autocomplete/employeefirstname?keyword=' + keyword);
     return this.http.get<MasterKeyValue[]>(this.baseUrl + `Autocomplete/EmployeeFirstname?id=${encodeURIComponent(keyword)}`);
+  }
+
+  getJobIdList() : Observable<MasterKeyValue[]> {
+    return this.http.get<MasterKeyValue[]>(this.baseUrl + `Autocomplete/EmployeeJobIdList`);
   }
 }
 

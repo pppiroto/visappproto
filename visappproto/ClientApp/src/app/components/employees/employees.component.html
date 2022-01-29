@@ -1,14 +1,14 @@
 <h3>Employees</h3>
 <div class="form-group">
     <div class="form-group">
-        <label for="firstnameAutoComplete">FirstName:</label>
-        <wj-combo-box #firstnameAutoComplete id="firstnameAutoComplete" 
-            [itemsSource]="firstNames"
-            [(text)]="firstName"
-            (textChanged)="firstNameChanged()"
-            [isEditable]="true"
+        <label for="cmbJobId">JOB_ID:</label>
+        <wj-combo-box #cmbJobId id="cmbJobId" 
+            [itemsSource]="jobIdList"
+            [(text)]="jobId"
         ></wj-combo-box>
     </div>
+
+
     <div>
         <input type="button" value="searchSync" (click)="searchSync()" />
         <input type="button" value="searchASync" (click)="searchASync()" />

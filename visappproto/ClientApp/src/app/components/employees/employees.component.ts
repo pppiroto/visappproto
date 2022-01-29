@@ -19,8 +19,8 @@ export class EmployeesComponent implements OnInit {
 
   public employees: Employee[] = [];
   selectedItem: string = "";
-  firstNames: string[] = [];
-  firstName: string = "";
+  jobIdList: string[] = [];
+  jobId: string = "";
 
   @ViewChild('flex', { static: true })
   flex!: wjcGrid.FlexGrid;
@@ -44,28 +44,16 @@ export class EmployeesComponent implements OnInit {
       //     this.flex.collectionView.currentItem);
   }
 
-  // コンボボックス
-  async firstNameChanged() {
-    if (this.firstName.length > 1) {
-      console.log(`keyword:${this.firstName}`)
-      try {
-        let firstNameMaster: MasterKeyValue[] 
-          = await this.employeeService.firstNameAutoComplete(this.firstName).toPromise();
-        
-        //this.firstNames.splice(0);
-        firstNameMaster.forEach(
-          (mst, idx) => {
-            let item = `(${mst.masterKey}) ${mst.masterValue}`;
-            console.log(`${item}`);
-            if (idx == 0) {
-              this.firstName = item;
-            }
-            this.firstNames.push(item);
-          });
-
-      } catch (error) {
-        console.log(error);
-      }
+  // JOB_ID データソースロード
+  async loadJobIdList() {
+    try {
+      let jobIdList: MasterKeyValue[] 
+        = await this.employeeService.getJobIdList().toPromise();
+      let buf: string[] = [];
+      jobIdList.forEach((mst, idx) =>  buf.push(`${mst.masterValue}`));
+      this.jobIdList = buf;
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -96,5 +84,7 @@ export class EmployeesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadJobIdList();
   }
+
 }

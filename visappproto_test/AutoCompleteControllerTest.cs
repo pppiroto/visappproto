@@ -16,7 +16,7 @@ public class AutoCompleteControllerTest
     /// 実行には、プロジェクトルートで、dotnet test を実行
     ///</summary>
     [Fact]
-    public void Get_All_UnitTestSample()
+    public void EmployeeFirstname_Test()
     {
         // Mock オブジェクト
         var loggerMoc = new Mock<ILogger<AutoCompleteController>>().Object;
@@ -26,6 +26,22 @@ public class AutoCompleteControllerTest
         
         var controller = new AutoCompleteController(loggerMoc, settings);
         foreach(var firsltNames in controller.EmployeeFirstname("a"))
+        {
+            System.Console.WriteLine(JsonSerializer.Serialize(firsltNames));
+        }
+    }
+
+    [Fact]
+    public void GetEmployeeJobIdList_Test()
+    {
+        // Mock オブジェクト
+        var loggerMoc = new Mock<ILogger<AutoCompleteController>>().Object;
+
+        var settings = new VisAppProtSettings();
+        settings.ConnectionStrings = "user id=test;password=pass;data source=bombay.local:1521/orclpdb;pooling=true";
+        
+        var controller = new AutoCompleteController(loggerMoc, settings);
+        foreach(var firsltNames in controller.EmployeeJobIdList())
         {
             System.Console.WriteLine(JsonSerializer.Serialize(firsltNames));
         }
