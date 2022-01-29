@@ -25,7 +25,7 @@ public class AutoCompleteControllerTest
         settings.ConnectionStrings = "user id=test;password=pass;data source=bombay.local:1521/orclpdb;pooling=true";
         
         var controller = new AutoCompleteController(loggerMoc, settings);
-        foreach(var firsltNames in controller.EmployeeFirstName("a"))
+        foreach(var firsltNames in controller.EmployeeFirstname("a"))
         {
             System.Console.WriteLine(JsonSerializer.Serialize(firsltNames));
         }

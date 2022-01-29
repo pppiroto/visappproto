@@ -20,11 +20,10 @@ public class AutoCompleteController : ControllerBase
         _settings = settings;
     }
 
-    [HttpGet]
+    [HttpGet("EmployeeFirstname")]
     // public IEnumerable<MasterKeyValue> EmployeeFirstName(string keyword)
-    public IEnumerable<MasterKeyValue> Get()
+    public IEnumerable<MasterKeyValue> EmployeeFirstname(string id)
     {
-        string keyword = "A";
         Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
         var employeeFirstNames = new List<MasterKeyValue>();
@@ -33,7 +32,7 @@ public class AutoCompleteController : ControllerBase
         {
             conn.Open();
 
-            var firstname = $"%{keyword.ToUpper()}%";
+            var firstname = $"%{id.ToUpper()}%";
 
             var sql = 
             @$"select EMPLOYEE_ID as MASTER_KEY, FIRST_NAME as MASTER_VALUE from hr.employees 

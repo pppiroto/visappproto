@@ -8,6 +8,7 @@ import * as input from '@grapecity/wijmo.input';
 import { EmployeeService } from '../../services/employee.service';
 import { Observable, of } from 'rxjs';
 import { MasterKeyValue } from 'src/app/models/masterKeyValue';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-employees',
@@ -46,46 +47,26 @@ export class EmployeesComponent implements OnInit {
   // コンボボックス
   async firstNameChanged() {
     if (this.firstName.length > 1) {
+      console.log(`keyword:${this.firstName}`)
       try {
         let firstNameMaster: MasterKeyValue[] 
           = await this.employeeService.firstNameAutoComplete(this.firstName).toPromise();
         
-        this.firstNames.splice(0)
+        //this.firstNames.splice(0);
         firstNameMaster.forEach(
-          (mst, idx) => this.firstNames.push(`(${mst.masterKey}) ${mst.masterValue}`));
+          (mst, idx) => {
+            let item = `(${mst.masterKey}) ${mst.masterValue}`;
+            console.log(`${item}`);
+            if (idx == 0) {
+              this.firstName = item;
+            }
+            this.firstNames.push(item);
+          });
 
       } catch (error) {
         console.log(error);
       }
     }
-  }
-  /** 
-   * @param query ユーザーが入力したクエリー文字列
-   * @param max 返す項目の最大数
-   * @param callback 結果が取得されたときに呼び出すコールバック関数
-   * @see https://demo.grapecity.com/wijmo/api/classes/wijmo_input.autocomplete.html#itemssourcefunction
-   * @see https://demo.grapecity.com/wijmo/docs/Topics/Input/AutoComplete/Searching
-   */
-  getItemBySearch(query: string, max: number, callback: Function): void {
-    // DIした、httpやサービスを利用できない(Wijmoから、プロパティ/属性バインディングのため？)
-    console.log(`callback : ${callback}`);
-    if (!query) {
-        callback(null);
-        return;
-    }
-    // Wijmoのサンプル
-    wjcCore.httpRequest('https://localhost:44472/autocomplete/', {
-      data: {
-      //     $format: 'json',
-      //     $select: 'masterKey,masterValue',
-      //     $filter: 'indexof(masterValue.toUpperCase(), \'' + query.toUpperCase() + '\') gt -1'
-      },
-      success: (xhr: XMLHttpRequest) => {
-          let response = JSON.parse(xhr.response);
-          console.log(response);
-          callback(response);
-      }
-    });
   }
 
   async searchSync() {

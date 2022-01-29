@@ -20,12 +20,12 @@ export class EmployeeService {
    * @see https://angular.jp/tutorial/toh-pt6
    */
   getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(this.baseUrl + 'employees');
+    return this.http.get<Employee[]>(this.baseUrl + 'Employees');
   }
   
   firstNameAutoComplete(keyword: string) : Observable<MasterKeyValue[]> {
     // return this.http.get<MasterKeyValue[]>(this.baseUrl + 'autocomplete/employeefirstname?keyword=' + keyword);
-    return this.http.get<MasterKeyValue[]>(this.baseUrl + 'autocomplete');
+    return this.http.get<MasterKeyValue[]>(this.baseUrl + `Autocomplete/EmployeeFirstname?id=${encodeURIComponent(keyword)}`);
   }
 }
 

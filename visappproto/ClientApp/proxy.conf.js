@@ -9,8 +9,8 @@ const PROXY_CONFIG = [
       "/weatherforecast",
       "/simpledataaccess",
       "/ormdataaccess",
-      "/employees",
-      "/autocomplete",
+      "/Employees",
+      "/Autocomplete/EmployeeFirstname"
    ],
     target: target,
     secure: false
