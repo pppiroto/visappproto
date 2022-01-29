@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 namespace visappproto.Models;
 
 public class Employelee
-    {
+{
 
     [DataMember(Name = "EMPLOYEE_ID")]
     public string? employeeId{ get; set; }

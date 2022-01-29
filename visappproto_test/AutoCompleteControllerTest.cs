@@ -8,7 +8,7 @@ using visappproto.Models;
 
 namespace visappproto_test;
 
-public class EmployeesControllerTest
+public class AutoCompleteControllerTest
 {
 
     ///<summary>
@@ -18,17 +18,16 @@ public class EmployeesControllerTest
     [Fact]
     public void Get_All_UnitTestSample()
     {
-        // Mock オブジェクト  
-        // Mock の使用方法の説明のために、loggerを使用している ->　テスト対象のコントローラーでログをはいても何も起こらない
-        var loggerMoc = new Mock<ILogger<EmployeesController>>().Object;
+        // Mock オブジェクト
+        var loggerMoc = new Mock<ILogger<AutoCompleteController>>().Object;
 
         var settings = new VisAppProtSettings();
         settings.ConnectionStrings = "user id=test;password=pass;data source=bombay.local:1521/orclpdb;pooling=true";
         
-        var controller = new EmployeesController(loggerMoc, settings);
-        foreach(var employee in controller.Get())
+        var controller = new AutoCompleteController(loggerMoc, settings);
+        foreach(var firsltNames in controller.EmployeeFirstName("a"))
         {
-            System.Console.WriteLine(JsonSerializer.Serialize(employee));
+            System.Console.WriteLine(JsonSerializer.Serialize(firsltNames));
         }
     }
 }

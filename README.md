@@ -72,6 +72,8 @@ $ ng g service services/Employee
 ```
 
 # .NET Core テンプレート
+- [テンプレート](https://docs.microsoft.com/ja-jp/dotnet/core/tools/dotnet-new-sdk-templates)
+
 ## ASP.Net with Angular
 https://docs.microsoft.com/ja-jp/dotnet/core/tools/dotnet-new-sdk-templates#spa
 
@@ -200,6 +202,8 @@ $ npm install @grapecity/wijmo.angular2.all
 - dotnet watch run で起動時、Web API用のポートが用意される(proxy.conf.js)
 <img src="./readme_images/08_webapi_debug.png" width="400">
 
+### ルーティング
+- [ルーティング](https://docs.microsoft.com/ja-jp/aspnet/core/mvc/controllers/routing?view=aspnetcore-6.0)
 ### Action
 - Progmra.cs 参照
 
@@ -212,6 +216,10 @@ $ npm install @grapecity/wijmo.angular2.all
 ```
 $ cd visappproto_test
 $ dotnet test
+```
+- フィルタをかける
+```
+$ dotnet test --filter AutoCompleteControllerTest
 ```
 #### Mock ライブラリの導入
 ```
@@ -234,8 +242,9 @@ $ dotnet add package Oracle.ManagedDataAccess.Core --version 3.21.50
 - /Controllers/SimpleDataAccessController.cs
 
 ## OR Mapper(Dapper)
-+ https://qiita.com/ikuosaito1989/items/f332863dfbe5f30fdf4a
++ [概要](https://qiita.com/ikuosaito1989/items/f332863dfbe5f30fdf4a)
 + [QueryFirstチュートリアル](https://dapper-tutorial.net/queryfirst)
++ [応用](https://yanor.net/wiki/?dotNet/Dapper/%E5%BF%9C%E7%94%A8)
 ```
 $ dotnet add package Dapper --version 2.0.123
 ```
