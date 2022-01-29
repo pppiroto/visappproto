@@ -10,6 +10,10 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
+  
+  getBaseUrl(): string {
+    return this.baseUrl;
+  }
 
   /**
    * @see https://angular.jp/tutorial/toh-pt4

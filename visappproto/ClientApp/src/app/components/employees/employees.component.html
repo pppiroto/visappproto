@@ -1,14 +1,12 @@
 <h3>Employees</h3>
 <div class="form-group">
     <div class="form-group">
-        <label for="theAutoComplete">AutoComplete:</label>
-        <wj-auto-complete 
-            #theAutoComplete id="theAutoComplete" 
-            [placeholder]="'Employee first name'" 
-            [displayMemberPath]="'ProductName'"
-            [itemsSourceFunction]="getItemBySearch"
-        >
-        </wj-auto-complete>
+        <label for="firstnameAutoComplete">FirstName:</label>
+        <wj-combo-box #firstnameAutoComplete id="firstnameAutoComplete" 
+            [itemsSource]="firstNames"
+            [(text)]="firstName"
+            (textChanged)="firstNameChanged()"
+        ></wj-combo-box>
     </div>
     <div>
         <input type="button" value="searchSync" (click)="searchSync()" />
