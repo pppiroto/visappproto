@@ -1,4 +1,12 @@
 <h3>Employees</h3>
+<div class="form-group">
+    <div class="form-group">
+        <label for="theAutoComplete">AutoComplete:</label>
+        <wj-auto-complete #theAutoComplete id="theAutoComplete" [placeholder]="'Employee first name'" [displayMemberPath]="'ProductName'"
+            [itemsSourceFunction]="getItemBySearch">
+        </wj-auto-complete>
+    </div>
+</div>
 <div class="container-fluid">
     <p [innerHTML]="selectedItem"></p>
     <!-- the grid -->

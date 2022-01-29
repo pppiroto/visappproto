@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Employee } from '../../models/employee';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
+import { EmployeeService } from '../../services/employee.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-employees',
@@ -17,12 +19,12 @@ export class EmployeesComponent implements OnInit {
   @ViewChild('flex', { static: true })
   flex!: wjcGrid.FlexGrid;
 
-
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<Employee[]>(baseUrl + 'employees').subscribe(result => {
+  constructor(private employeeService: EmployeeService) {
+    console.log(`${employeeService}`);
+    employeeService.getEmployees().subscribe(result => {
       this.employees = result;
     }, error => console.error(error));
-  }
+  } 
 
   flexInitialized(flexgrid: wjcGrid.FlexGrid) {
     // sort the data by country
@@ -38,6 +40,24 @@ export class EmployeesComponent implements OnInit {
       //     this.flex.collectionView.currentItem);
   }
 
+  /** 
+   * @param query ユーザーが入力したクエリー文字列
+   * @param max 返す項目の最大数
+   * @param callback 結果が取得されたときに呼び出すコールバック関数
+   * @see https://demo.grapecity.com/wijmo/api/classes/wijmo_input.autocomplete.html#itemssourcefunction
+   */
+  getItemBySearch(query: string, max: number, callback: Function) {
+    if (!query) {
+        callback(null);
+        return;
+    }
+
+    // https://angular.jp/guide/http
+    //console.log(`query:${query}, max:${max}, http:${this.http}`);
+
+
+  }
+   
   ngOnInit(): void {
   }
 
