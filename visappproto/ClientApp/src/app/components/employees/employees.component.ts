@@ -1,14 +1,11 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Employee } from '../../models/employee';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as input from '@grapecity/wijmo.input';
 
 import { EmployeeService } from '../../services/employee.service';
-import { Observable, of } from 'rxjs';
 import { MasterKeyValue } from 'src/app/models/masterKeyValue';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-employees',
@@ -68,8 +65,13 @@ export class EmployeesComponent implements OnInit {
 
     // TODO Service で処理をしたい
     // 本関数は、AutoComplete　のプロパティにセットされるため、
-    //　ComponentにDIされてたサービスの参照方法が現在不明
-    //　最悪この書き方だとしても、同様にDIされるbaseURL を解決する必要がある。。。
+    // ComponentにDIされてたサービスの参照方法が現在不明
+    // 最悪この書き方だとしても、同様にDIされるbaseURL を解決する必要がある。。。
+    // 
+    // Function.prototype.bind() を利用して、変数を束縛する 
+    // https://typescript-jp.gitbook.io/deep-dive/main-1/bind
+    // アロー関数のチェーン
+    // https://typescript-jp.gitbook.io/deep-dive/main-1/currying
     wjcCore.httpRequest(`https://localhost:44472/Autocomplete/EmployeeFirstname?id=${encodeURIComponent(query)}`, {
         success: (xhr: XMLHttpRequest) => {
             let response = JSON.parse(xhr.response);
@@ -77,6 +79,24 @@ export class EmployeesComponent implements OnInit {
         }
     });
   }
+  // Service 使用に書き換え From
+  async getFirstNameBySearchBindComponent(thisComponent: EmployeesComponent, query: string, max: number, callback: Function) {
+    console.log(thisComponent.employeeService); 
+    if (!query) {
+      callback(null);
+      return;
+    }
+    try {
+      let result = await this.employeeService.firstNameAutoComplete(query).toPromise();
+      console.log(result);
+      callback(result);
+    } catch(error) {
+      console.error(error);
+    }
+  }
+  getFirstNameBySearch2: Function = (query: string, max: number, callback: Function) => 
+  this.getFirstNameBySearchBindComponent(this, query, max, callback);
+  // Service 使用に書き換え To
 
   async searchSync() {
     this.employees.splice(0);
