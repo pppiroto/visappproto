@@ -6,6 +6,7 @@ import * as input from '@grapecity/wijmo.input';
 
 import { EmployeeService } from '../../services/employee.service';
 import { MasterKeyValue } from 'src/app/models/masterKeyValue';
+import { MasterService } from 'src/app/services/master.service';
 
 @Component({
   selector: 'app-employees',
@@ -22,7 +23,7 @@ export class EmployeesComponent implements OnInit {
   @ViewChild('flex', { static: true })
   flex!: wjcGrid.FlexGrid;
 
-  constructor(private employeeService: EmployeeService) { 
+  constructor(private masterService: MasterService, private employeeService: EmployeeService) { 
     console.log('constructor');
     console.log(`${this.employeeService.getBaseUrl()}`);
   } 
@@ -46,7 +47,7 @@ export class EmployeesComponent implements OnInit {
   async loadJobIdList() {
     try {
       let jobIdList: MasterKeyValue[] 
-        = await this.employeeService.getJobIdList().toPromise();
+        = await this.masterService.getJobIdList().toPromise();
       let buf: string[] = [];
       jobIdList.forEach((mst, idx) =>  buf.push(`${mst.masterValue}`));
       this.jobIdList = buf;
@@ -87,7 +88,7 @@ export class EmployeesComponent implements OnInit {
       return;
     }
     try {
-      let result = await this.employeeService.firstNameAutoComplete(query).toPromise();
+      let result = await this.masterService.firstNameAutoComplete(query).toPromise();
       console.log(result);
       callback(result);
     } catch(error) {
