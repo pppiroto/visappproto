@@ -241,6 +241,11 @@ $ dotnet add package Oracle.ManagedDataAccess.Core --version 3.21.50
 ## Oracle Data Providor直接利用
 - /Controllers/SimpleDataAccessController.cs
 
+# MySQL
+```
+$ dotnet add package MySql.Data --version 8.0.28
+```
+
 ## OR Mapper(Dapper)
 + [概要](https://qiita.com/ikuosaito1989/items/f332863dfbe5f30fdf4a)
 + [QueryFirstチュートリアル](https://dapper-tutorial.net/queryfirst)
@@ -261,4 +266,11 @@ $ dotnet add package Dapper --version 2.0.123
 
 <img src="./readme_images/09_frexgrid_sample.png" width="400">
 
+- [無限スクロール](https://demo.grapecity.com/wijmo/demos/Grid/Data-binding/InfiniteScrolling/angular)
+- [フォーム](https://demo.grapecity.com/wijmo/demos/Undo/UndoStack/angular)
+
+
+
+# Angular Sample App
+- https://angular.jp/start
 - [StackBlitzサンプルプロジェクト](https://angular.jp/generated/live-examples/getting-started-v0/stackblitz.html)
