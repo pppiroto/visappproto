@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Wijmo Modules
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
+
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // Root
 import { AppComponent } from './app.component';
@@ -39,8 +42,10 @@ import { EmployeesComponent } from './components/employees/employees.component';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     WjInputModule,
     WjGridModule,
+    AccordionModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'main', component: MainFrameComponent },

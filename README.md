@@ -269,12 +269,9 @@ $ dotnet add package Dapper --version 2.0.123
 - Bootstrapのラッパー
 - Bootstrapの機能をコンポーネント、ディレクティブとして呼び出すことができる
 ```
-$ npm install ngx-bootstrap@7.1.2
+$ ng add ngx-bootstrap
 ```
-- Accordion の利用
-```
-$ ng add ngx-bootstrap  --component accordion
-```
+
 
 ## Grid
 - [FrexGrid](https://demo.grapecity.com/wijmo/api/modules/wijmo_grid.html)
