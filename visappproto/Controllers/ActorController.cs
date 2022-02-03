@@ -26,7 +26,8 @@ public class ActorController : ControllerBase
     {
         var result = new List<dynamic>();
         var employeeJobIdList = new List<MasterKeyValue>();
-        using(var conn = new MySqlConnection(_settings.MySQLConnectionString)) 
+
+        using(var conn = new MySqlConnection(_settings.MySQLConnectionStrings)) 
         {
             conn.Open();
             var sql = @$"select * from sakila.actor";

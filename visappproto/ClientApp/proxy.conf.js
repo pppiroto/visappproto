@@ -10,6 +10,7 @@ const PROXY_CONFIG = [
       "/simpledataaccess",
       "/ormdataaccess",
       "/Employees",
+      "/Actor",
       "/Autocomplete/EmployeeFirstname",
       "/Autocomplete/EmployeeJobIdList"
    ],

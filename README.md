@@ -260,6 +260,19 @@ $ dotnet add package Dapper --version 2.0.123
 
 
 # UI
+## Bootstrap
+- [Bootstrap](https://getbootstrap.jp/)
+
+### ngx-bootstrap
+- [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/)
+- [ngx-bootstrap npm](https://www.npmjs.com/package/ngx-bootstrap)
+- Bootstrapのラッパー
+- Bootstrapの機能をコンポーネント、ディレクティブとして呼び出すことができる
+```
+$ ng add ngx-bootstrap
+```
+
+
 ## Grid
 - [FrexGrid](https://demo.grapecity.com/wijmo/api/modules/wijmo_grid.html)
 - visappproto/ClientApp/src/app/components/employees
@@ -275,14 +288,30 @@ $ dotnet add package Dapper --version 2.0.123
 - https://angular.jp/start
 - [StackBlitzサンプルプロジェクト](https://angular.jp/generated/live-examples/getting-started-v0/stackblitz.html)
 
-
 # Windows
 
 ## NVM
 - https://github.com/coreybutler/nvm-windows/releases
 
+# Deploy
+- 本体プロジェクト直下
 
-# Trouble
+```
+$ dotnet publish
+visappproto -> ~/Workspaces/visappproto/visappproto/bin/Debug/net6.0/publish/
+```
+## トラブルシュート
+### error : initial exceeded maximum budget
+- EXEC : error : initial exceeded maximum budget. Budget 1.00 MB was not met by 171.82 kB with a total of 1.17 MB.
+- angular.json
+```
+"budgets": [
+  {
+    "type": "initial",
+    "maximumWarning": "5mb",
+    "maximumError": "10mb"
+  },
+```              
 ## SPAサーバーループで起動しない原因が掴めない
 - dotnet watch run ではなく、以下いずれかで直接起動する
 ```
