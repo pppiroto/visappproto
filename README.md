@@ -289,8 +289,11 @@ $ ng add ngx-bootstrap
 - [StackBlitzサンプルプロジェクト](https://angular.jp/generated/live-examples/getting-started-v0/stackblitz.html)
 
 # Deploy
+- 本体プロジェクト直下
+
 ```
 $ dotnet publish
+visappproto -> ~/Workspaces/visappproto/visappproto/bin/Debug/net6.0/publish/
 ```
 ## トラブルシュート
 ### error : initial exceeded maximum budget
