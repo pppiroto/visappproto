@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { Employee } from '../../models/employee';
 import * as wjcCore from '@grapecity/wijmo';
 import * as wjcGrid from '@grapecity/wijmo.grid';
 import * as input from '@grapecity/wijmo.input';
 
+import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
 import { MasterKeyValue } from 'src/app/models/masterKeyValue';
 import { MasterService } from 'src/app/services/master.service';

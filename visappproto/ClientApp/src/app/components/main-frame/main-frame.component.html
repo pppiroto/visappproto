@@ -1,1 +1,18 @@
-<p>main-frame works!</p>
+<h3>Sakila</h3>
+<div class="form-group">
+    <div>
+        <button (click)="searchActor()">
+            Search Actor
+        </button>
+    </div>
+</div>
+<div class="container-fluid">
+    <wj-flex-grid #flex
+        [itemsSource]="actors" 
+        (initialized)="flexInitialized(flex)">
+        <wj-flex-grid-column [header]="'actor_id'" [binding]="'actor_id'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'first_name'" [binding]="'first_name'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'last_name'" [binding]="'last_name'" width="2*"></wj-flex-grid-column>
+        <wj-flex-grid-column [header]="'last_update'" [binding]="'last_update'" width="2*"></wj-flex-grid-column>
+    </wj-flex-grid>
+</div>
