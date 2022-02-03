@@ -18,7 +18,7 @@ public class ActorControllerTest
         var loggerMoc = new Mock<ILogger<ActorController>>().Object;
 
         var settings = new VisAppProtSettings();
-        settings.MySQLConnectionString = "Database=sakila;Data Source=bombay.local;User Id=test;Password=pass; pooling = false; convert zero datetime=True";
+        settings.MySQLConnectionString = "Database=sakila; Data Source=bombay.local;User Id=test;Password=pass; pooling = false; convert zero datetime=True";
         
         var controller = new ActorController(loggerMoc, settings);
         foreach(var item in controller.Get())
