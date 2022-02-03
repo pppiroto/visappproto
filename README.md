@@ -287,3 +287,22 @@ $ ng add ngx-bootstrap
 # Angular Sample App
 - https://angular.jp/start
 - [StackBlitzサンプルプロジェクト](https://angular.jp/generated/live-examples/getting-started-v0/stackblitz.html)
+
+# Deploy
+```
+$ dotnet publish
+```
+## トラブルシュート
+### error : initial exceeded maximum budget
+- EXEC : error : initial exceeded maximum budget. Budget 1.00 MB was not met by 171.82 kB with a total of 1.17 MB.
+- angular.json
+```
+"budgets": [
+  {
+    "type": "initial",
+    "maximumWarning": "5mb",
+    "maximumError": "10mb"
+  },
+```              
+
+
