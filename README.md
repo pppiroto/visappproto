@@ -274,3 +274,20 @@ $ dotnet add package Dapper --version 2.0.123
 # Angular Sample App
 - https://angular.jp/start
 - [StackBlitzサンプルプロジェクト](https://angular.jp/generated/live-examples/getting-started-v0/stackblitz.html)
+
+
+# Windows
+
+## NVM
+- https://github.com/coreybutler/nvm-windows/releases
+
+
+# Trouble
+## SPAサーバーループで起動しない原因が掴めない
+- dotnet watch run ではなく、以下いずれかで直接起動する
+```
+npm start
+ng serve
+```
+## Error: error:0308010C:digital envelope routines::unsupported
+- Node バージョン下げる
