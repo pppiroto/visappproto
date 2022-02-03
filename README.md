@@ -102,6 +102,7 @@ $ dotnet watch run
 
 <img src="./readme_images/01_aspdotnet_angular.png" width="400">
 
+
 - Angular : ClinentApp/src/app/counter Sample
 
 <img src="./readme_images/02_counter_sample.png" width="400">
@@ -294,12 +295,20 @@ $ ng add ngx-bootstrap
 - https://github.com/coreybutler/nvm-windows/releases
 
 # Deploy
-- 本体プロジェクト直下
+## IIS
+- IISの構成及び、ASP.NET Core Runtime 6.0.1 Hosting Bundle のインストール
+- [ASP.NET Core Runtime 6.0.1 Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
+## 発行
+- [アプリケーションの発行](https://docs.microsoft.com/ja-jp/dotnet/core/deploying/)
+- 本体プロジェクト直下
+- 発行されたら、IISのサイトにコピー
 ```
 $ dotnet publish
 visappproto -> ~/Workspaces/visappproto/visappproto/bin/Debug/net6.0/publish/
 ```
+<img src="./readme_images/10_run_at_iis.png" width="400">
+
 ## トラブルシュート
 ### error : initial exceeded maximum budget
 - EXEC : error : initial exceeded maximum budget. Budget 1.00 MB was not met by 171.82 kB with a total of 1.17 MB.
