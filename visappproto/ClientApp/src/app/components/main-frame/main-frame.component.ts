@@ -1,10 +1,6 @@
-import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import * as wjcCore from '@grapecity/wijmo';
-import * as wjcGrid from '@grapecity/wijmo.grid';
-import * as input from '@grapecity/wijmo.input';
+import { ChangeDetectorRef, Component, ComponentRef, Inject, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { DynamicComponentService } from 'src/app/services/dynamic-component.service';
 
-import { Actor } from 'src/app/models/sakila';
-import { SakilaService } from 'src/app/services/sakila.service';
 
 @Component({
   selector: 'app-main-frame',
@@ -13,29 +9,23 @@ import { SakilaService } from 'src/app/services/sakila.service';
 })
 export class MainFrameComponent implements OnInit {
 
-  actors: Actor[] = [];
-  constructor(private sakilaService: SakilaService) { }
+  @ViewChild('dynCompContainer', { read: ViewContainerRef })
+  compContainer!: ViewContainerRef;
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private componentService: DynamicComponentService) { 
+  }
 
   ngOnInit(): void {
+    
   }
 
-
-  flexInitialized(flexgrid: wjcGrid.FlexGrid) {
-    let sd = new wjcCore.SortDescription('actor_id', true);
-    flexgrid.collectionView.sortDescriptions.push(sd);
-    flexgrid.collectionView.currentChanged.addHandler(this._updateCurrentInfo.bind(this));
-    this._updateCurrentInfo();
+  ngAfterViewInit() {
+    let cmp: ComponentRef<any>;
+    ['counter','counter','counter'].forEach((tileType) => {
+      cmp = this.componentService.createDynaComp(this.compContainer, tileType);
+    });
+    this.cdr.detectChanges();
   }
-
-  private _updateCurrentInfo() {
-  }
-
-  async searchActor() {
-    try {
-      this.actors = await this.sakilaService.getActor().toPromise();
-    } catch(error) {
-      console.log(error);
-    }
-  }
-
 }

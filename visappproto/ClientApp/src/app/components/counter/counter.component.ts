@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'app-counter-component',
@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 export class CounterComponent {
   public currentCount = 0;
 
+  @HostBinding('class') class = 'tile';
+  
   public incrementCounter() {
     this.currentCount++;
   }
