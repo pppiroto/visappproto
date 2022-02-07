@@ -24,6 +24,7 @@ import { PlaygroundComponent } from './components/playground/playground.componen
 import { SimpleDataAccessComponent } from './components/simple-data-access/simple-data-access.component';
 import { OrmDataAccessComponent } from './components/orm-data-access/orm-data-access.component';
 import { EmployeesComponent } from './components/employees/employees.component';
+import { SakilaComponent } from './components/sakila/sakila.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EmployeesComponent } from './components/employees/employees.component';
     PlaygroundComponent,
     SimpleDataAccessComponent,
     OrmDataAccessComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    SakilaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -55,6 +57,7 @@ import { EmployeesComponent } from './components/employees/employees.component';
       { path: 'simple-data', component: SimpleDataAccessComponent },
       { path: 'orm-data', component: OrmDataAccessComponent },
       { path: 'employees', component: EmployeesComponent },
+      { path: 'sakila', component: SakilaComponent },
     ])
   ],
   providers: [

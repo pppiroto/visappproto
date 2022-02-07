@@ -170,7 +170,7 @@ UPDATE src/app/app.module.ts (1267 bytes)
 <img src="./readme_images/05_new_window.png" width="400">
 
 
-# Wijimo
+# Wijmo
 - https://www.grapecity.co.jp/developer/wijmo?utm_medium=link&utm_source=demo-wijm
 
 ## NPM によるインストール(Angularコンポーネント)
