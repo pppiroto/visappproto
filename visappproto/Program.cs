@@ -1,6 +1,7 @@
 using System.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Serilog;
 using visappproto.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,14 @@ builder.Services.AddSingleton<IVisAppProtSettings>(sp
     => sp.GetRequiredService<IOptions<VisAppProtSettings>>().Value);
 #endregion
 
+#region TODO Logger
+var logger = new LoggerConfiguration()
+  .ReadFrom.Configuration(builder.Configuration)
+  .Enrich.FromLogContext()
+  .CreateLogger();
+// builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+#endregion
 
 builder.Services.AddControllersWithViews();
 
