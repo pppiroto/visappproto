@@ -13,6 +13,7 @@ import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 // ngx-bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -57,6 +58,7 @@ import { SakilaComponent } from './components/sakila/sakila.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'main', component: MainFrameComponent },
