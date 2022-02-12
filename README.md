@@ -286,6 +286,32 @@ $ dotnet add package Dapper --version 2.0.123
 $ ng add ngx-bootstrap
 ```
 
+### Angular Material
+- https://material.angular.io/
+- [カスタムテーマ](https://angular.keicode.com/topics/angular-material-custom-theme.php)
+
+```
+$ ng add @angular/material
+
+? Choose a prebuilt theme name, or "custom" for a custom theme: Custom
+? Set up global Angular Material typography styles? Yes
+? Set up browser animations for Angular Material? Yes
+```
+
+#### Components
+- [Toolbar](https://material.angular.io/components/toolbar/overview)
+
+#### Theme
+- https://www.creative-tim.com/product/material-dashboard-angular2
+- [Angular Material でカスタムカラーを使う](https://zenn.dev/fusho_takahashi/articles/20d044c4a2d459b5c2ca)
+- [カラーパレット生成](http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5)
+- [カラーシステム](https://material.io/design/color/the-color-system.html)
+- [Angular Materialのカスタムテーマを設定](https://qiita.com/daikiojm/items/7b77edb49306d29f389d)
+- [Angular Material _palette.scss ](https://github.com/angular/components/blob/c1f6ea19cb317d30af79dc431d39ed8b962e146d/src/lib/core/theming/_palette.scss)
+
+
+### Modal
+- https://valor-software.com/ngx-bootstrap/#/components/modals?tab=overview
 
 ## Grid
 - [FrexGrid](https://demo.grapecity.com/wijmo/api/modules/wijmo_grid.html)

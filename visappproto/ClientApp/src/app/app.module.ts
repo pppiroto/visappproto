@@ -9,6 +9,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WjInputModule } from '@grapecity/wijmo.angular2.input';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 
+// Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
+// ngx-bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // Root
@@ -48,6 +54,9 @@ import { SakilaComponent } from './components/sakila/sakila.component';
     WjInputModule,
     WjGridModule,
     AccordionModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'main', component: MainFrameComponent },

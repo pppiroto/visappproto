@@ -335,3 +335,9 @@ can be found in the LICENSE file at https://angular.io/license
 .wj-ranges {
   opacity: 0.15;
 }
+
+/* add by angular material */
+html, body { 
+  height: 100%; 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
