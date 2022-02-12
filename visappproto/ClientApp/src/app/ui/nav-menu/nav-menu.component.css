@@ -7,7 +7,12 @@
   align-items: center;
   justify-content: center;
 }
-
+.example-container {
+  height: 100%;
+}
+.example-menu {
+  height: 100%;
+}
 .example-sidenav {
   padding: 20px;
 }
