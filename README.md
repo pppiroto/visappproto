@@ -226,6 +226,20 @@ $ dotnet test --filter AutoCompleteControllerTest
 ```
 $ dotnet add package Moq --version 4.16.1
 ```
+### Logger
+
+#### Logger
+- https://github.com/serilog/serilog-aspnetcore
+- https://github.com/serilog/serilog-extensions-logging
+- https://www.claudiobernasconi.ch/2022/01/28/how-to-use-serilog-in-asp-net-core-web-api/
+- https://minato128.hateblo.jp/entry/2017/09/12/232155
+- https://qiita.com/panda728z/items/7638c84d0e07a9f85ec3
+- https://ichiroku11.hatenablog.jp/entry/2018/12/05/232457
+```
+dotnet add package Serilog.AspNetCore --version 5.0.0-dev-00259
+```
+dotnet add package Serilog.Formatting.Compact --version 1.1.1-dev-00944
+dotnet add package Serilog.Sinks.File --version 5.0.1-dev-00947
 
 # Data Access
 ## Oracle 19c
