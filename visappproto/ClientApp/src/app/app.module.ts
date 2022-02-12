@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatListModule } from '@angular/material/list';
 // ngx-bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
@@ -61,6 +61,7 @@ import { SakilaComponent } from './components/sakila/sakila.component';
     MatButtonModule,
     MatSidenavModule,
     MatMenuModule,
+    MatListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'main', component: MainFrameComponent },

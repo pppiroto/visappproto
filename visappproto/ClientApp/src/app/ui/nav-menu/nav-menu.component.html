@@ -31,14 +31,14 @@
 </header>
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+    <mat-selection-list #shoes [multiple]="false">
+      <mat-list-option *ngFor="let link of linkMenus" [value]="link.id">
+        <mat-list-item role="listitem" [routerLink]="[link.link]">{{link.title}}</mat-list-item>
+      </mat-list-option>
+    </mat-selection-list>
   </mat-drawer>
 
-  <div class="container">
+  <div class="example-sidenav-content ">
     <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>
