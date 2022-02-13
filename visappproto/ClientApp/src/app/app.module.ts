@@ -16,6 +16,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+
 // ngx-bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 
@@ -62,6 +66,8 @@ import { SakilaComponent } from './components/sakila/sakila.component';
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'main', component: MainFrameComponent },
