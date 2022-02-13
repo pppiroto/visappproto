@@ -1,13 +1,12 @@
 <h3>Sakila</h3>
 <div class="form-group">
-    <mat-form-field appearance="legacy">
+    <mat-form-field appearance="outline">
         <mat-label>Search keyword</mat-label>
-        <input matInput placeholder="keyword">
+        <!-- <input matInput placeholder="placeholder"> -->
+        <input matInput>
+        <mat-icon matSuffix (click)="searchActor()">search</mat-icon>
         <!-- <mat-hint>Hint</mat-hint> -->
     </mat-form-field>
-    <button mat-button color="primary" (click)="searchActor()">
-        <mat-icon>search</mat-icon>
-    </button>
 </div>
 <div class="container-fluid">
     <wj-flex-grid #flex
